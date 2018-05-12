@@ -1,4 +1,4 @@
-package pl.lonski.edunomator.menu;
+package pl.lonski.edunomator.game.menu;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;

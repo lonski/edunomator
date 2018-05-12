@@ -1,4 +1,4 @@
-package pl.lonski.edunomator.colors;
+package pl.lonski.edunomator.game.colors;
 
 import java.util.List;
 

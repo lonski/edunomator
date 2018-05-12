@@ -1,7 +1,7 @@
-package pl.lonski.edunomator.colors;
+package pl.lonski.edunomator.game.colors;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
-import static pl.lonski.edunomator.colors.GameStage.FigureAction.*;
+import static pl.lonski.edunomator.game.colors.GameStage.FigureAction.*;
 
 import java.security.SecureRandom;
 import java.util.*;

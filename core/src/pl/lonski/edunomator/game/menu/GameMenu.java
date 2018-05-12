@@ -1,11 +1,11 @@
-package pl.lonski.edunomator.menu;
+package pl.lonski.edunomator.game.menu;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 
 import pl.lonski.edunomator.Edunomator;
-import pl.lonski.edunomator.Game;
+import pl.lonski.edunomator.game.Game;
 
 public class GameMenu implements Game {
 
@@ -15,7 +15,6 @@ public class GameMenu implements Game {
 
 	public GameMenu(Edunomator edunomator) {
 		this.edunomator = edunomator;
-		setStage(new ChooseLanguageStage(this));
 	}
 
 	@Override
@@ -24,6 +23,12 @@ public class GameMenu implements Game {
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 		stage.act(Gdx.graphics.getDeltaTime());
 		stage.draw();
+	}
+
+	@Override
+	public Game start(String lang) {
+		setStage(new ChooseLanguageStage(this));
+		return this;
 	}
 
 	public void show(String lang) {

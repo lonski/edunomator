@@ -20,7 +20,7 @@ public class TextureActor extends Actor {
 		setOrigin(getWidth() / 2, getHeight() / 2);
 	}
 
-	Rectangle getBounds() {
+	public Rectangle getBounds() {
 		return new Rectangle(getX(), getY(), getWidth(), getHeight());
 	}
 

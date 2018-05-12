@@ -1,4 +1,4 @@
-package pl.lonski.edunomator.colors;
+package pl.lonski.edunomator.game.colors;
 
 import java.util.*;
 
@@ -9,7 +9,7 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Json;
 
-import pl.lonski.edunomator.Game;
+import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.Speaker;
 
 public class ColorsGame implements Game {
@@ -32,6 +32,7 @@ public class ColorsGame implements Game {
 		return speaker;
 	}
 
+	@Override
 	public Game start(String lang) {
 		Config config = new Json().fromJson(Config.class,
 				Gdx.files.internal("colors/config/" + lang + ".json").readString());

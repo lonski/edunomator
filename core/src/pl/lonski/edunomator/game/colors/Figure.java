@@ -1,4 +1,4 @@
-package pl.lonski.edunomator.colors;
+package pl.lonski.edunomator.game.colors;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Batch;

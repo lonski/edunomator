@@ -2,10 +2,15 @@ package pl.lonski.edunomator;
 
 import com.badlogic.gdx.ApplicationAdapter;
 
-import pl.lonski.edunomator.colors.ColorsGame;
-import pl.lonski.edunomator.menu.GameMenu;
+import pl.lonski.edunomator.game.Game;
+import pl.lonski.edunomator.game.colors.ColorsGame;
+import pl.lonski.edunomator.game.menu.GameMenu;
+import pl.lonski.edunomator.game.numbers.NumbersGame;
 
 public class Edunomator extends ApplicationAdapter {
+
+	public static final float SCREEN_WIDTH = 1280 * 2;
+	public static final float SCREEN_HEIGHT = 720 * 2;
 
 	private final Speaker.Provider speakerProvider;
 	private Game game;
@@ -19,6 +24,8 @@ public class Edunomator extends ApplicationAdapter {
 		case COLORS_GAME:
 			game = new ColorsGame(speakerProvider).start(lang);
 			break;
+		case NUMBERS_GAME:
+			game = new NumbersGame(speakerProvider).start(lang);
 		default:
 		}
 	}
@@ -26,6 +33,7 @@ public class Edunomator extends ApplicationAdapter {
 	@Override
 	public void create() {
 		game = new GameMenu(this);
+		game.start("");
 	}
 
 	@Override
