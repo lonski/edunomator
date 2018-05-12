@@ -5,8 +5,8 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 
-import pl.lonski.edunomator.TextureActor;
 import pl.lonski.edunomator.game.GameStage;
+import pl.lonski.edunomator.util.TextureActor;
 
 class ChooseLanguageStage extends GameStage {
 

@@ -19,12 +19,12 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 
-import pl.lonski.edunomator.Speaker;
-import pl.lonski.edunomator.TextureActor;
 import pl.lonski.edunomator.game.GameStage;
 import pl.lonski.edunomator.physics.BodyUserData;
 import pl.lonski.edunomator.physics.WorldManager;
 import pl.lonski.edunomator.util.RandomUtils;
+import pl.lonski.edunomator.util.Speaker;
+import pl.lonski.edunomator.util.TextureActor;
 
 public class BearStage extends GameStage {
 

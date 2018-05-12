@@ -5,6 +5,7 @@ import java.util.Locale;
 import android.content.Context;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
+import pl.lonski.edunomator.util.Speaker;
 
 public class AndroidSpeaker implements Speaker, TextToSpeech.OnInitListener {
 

@@ -7,6 +7,7 @@ import pl.lonski.edunomator.game.colors.ColorsGame;
 import pl.lonski.edunomator.game.menu.GameMenu;
 import pl.lonski.edunomator.game.numbers.NumbersGame;
 import pl.lonski.edunomator.game.words.WordsGame;
+import pl.lonski.edunomator.util.Speaker;
 
 public class Edunomator extends ApplicationAdapter {
 

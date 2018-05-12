@@ -1,4 +1,4 @@
-package pl.lonski.edunomator;
+package pl.lonski.edunomator.util;
 
 import java.util.Locale;
 

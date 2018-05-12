@@ -7,9 +7,9 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
-import pl.lonski.edunomator.Speaker;
 import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.game.GameStage;
+import pl.lonski.edunomator.util.Speaker;
 
 public class WordsGame implements Game {
 

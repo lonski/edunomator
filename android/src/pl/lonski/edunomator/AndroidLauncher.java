@@ -2,13 +2,13 @@ package pl.lonski.edunomator;
 
 import java.util.Locale;
 
+import com.badlogic.gdx.backends.android.AndroidApplication;
+import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
+
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
-
-import com.badlogic.gdx.backends.android.AndroidApplication;
-import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import pl.lonski.edunomator.Edunomator;
+import pl.lonski.edunomator.util.Speaker;
 
 public class AndroidLauncher extends AndroidApplication {
 
