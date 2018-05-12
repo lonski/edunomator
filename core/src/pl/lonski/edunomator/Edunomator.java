@@ -9,9 +9,6 @@ import pl.lonski.edunomator.game.numbers.NumbersGame;
 
 public class Edunomator extends ApplicationAdapter {
 
-	public static final float SCREEN_WIDTH = 1280 * 2;
-	public static final float SCREEN_HEIGHT = 720 * 2;
-
 	private final Speaker.Provider speakerProvider;
 	private Game game;
 

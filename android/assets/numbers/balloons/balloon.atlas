@@ -1,0 +1,41 @@
+
+balloon.png
+size: 2048,1024
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+balloon
+  rotate: false
+  xy: 2, 2
+  size: 329, 595
+  orig: 329, 595
+  offset: 0, 0
+  index: 0
+balloon
+  rotate: false
+  xy: 333, 2
+  size: 329, 595
+  orig: 329, 595
+  offset: 0, 0
+  index: 1
+balloon
+  rotate: false
+  xy: 664, 2
+  size: 329, 595
+  orig: 329, 595
+  offset: 0, 0
+  index: 2
+balloon
+  rotate: false
+  xy: 995, 2
+  size: 329, 595
+  orig: 329, 595
+  offset: 0, 0
+  index: 3
+balloon
+  rotate: false
+  xy: 1326, 2
+  size: 329, 595
+  orig: 329, 595
+  offset: 0, 0
+  index: 4

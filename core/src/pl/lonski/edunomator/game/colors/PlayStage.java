@@ -1,34 +1,34 @@
 package pl.lonski.edunomator.game.colors;
 
 import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
-import static pl.lonski.edunomator.game.colors.GameStage.FigureAction.*;
+import static pl.lonski.edunomator.game.colors.PlayStage.FigureAction.*;
 
 import java.security.SecureRandom;
 import java.util.*;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.scenes.scene2d.*;
+import com.badlogic.gdx.scenes.scene2d.Action;
+import com.badlogic.gdx.scenes.scene2d.Actor;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.utils.SnapshotArray;
 
 import pl.lonski.edunomator.Speaker;
+import pl.lonski.edunomator.game.GameStage;
 
-class GameStage extends Stage {
+class PlayStage extends GameStage {
 
 	private static final float ANIMATION_SPEED = 0.3f;
-	private final float screenWidth;
-	private final float screenHeight;
 	private final List<Integer> brushIds;
 	private final Random random;
 	private Figure figure;
 	private int figureIdx;
 	private ColorsGame game;
 
-	GameStage(ColorsGame game) {
+	PlayStage(ColorsGame game) {
+		super(0.5f);
 		getViewport().update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
-		this.screenWidth = getViewport().getScreenWidth();
-		this.screenHeight = getViewport().getScreenHeight();
 		this.game = game;
 		this.random = new SecureRandom();
 		this.brushIds = new ArrayList<>();
@@ -61,8 +61,8 @@ class GameStage extends Stage {
 
 	private Figure createFigure() {
 		Figure figure = game.getFigures().get(figureIdx);
-		float x = (screenWidth - figure.getWidth() + game.getBrushes().get(0).getWidth() * 2) / 2;
-		float y = (screenHeight - figure.getHeight()) / 2;
+		float x = (getScreenWidth() - figure.getWidth() + game.getBrushes().get(0).getWidth() * 2) / 2;
+		float y = (getScreenHeight() - figure.getHeight()) / 2;
 		figure.setPosition(x, -figure.getHeight());
 		figure.addAction(moveTo(x, y, ANIMATION_SPEED * 2));
 		figure.setColored(false);
@@ -95,8 +95,8 @@ class GameStage extends Stage {
 	private List<Brush> createBrushes(final int figureBrushId) {
 		List<Brush> brushes = pickBrushSet(figureBrushId);
 		Collections.shuffle(brushes);
-		final float spacing = screenHeight / 10;
-		final float margin = (screenHeight
+		final float spacing = getScreenHeight() / 10;
+		final float margin = (getScreenHeight()
 				- spacing * Math.max(0, brushes.size() - 1)
 				- brushes.get(0).getHeight() * brushes.size()) / 2;
 		for (int i = 0; i < brushes.size(); i++) {
@@ -125,8 +125,8 @@ class GameStage extends Stage {
 								fadeIn(ANIMATION_SPEED),
 								speakFigure(game.getSpeaker(), figure),
 								waitForSpeaker(game.getSpeaker()),
-								moveTo(screenWidth, figure.getY(), ANIMATION_SPEED * 2),
-								nextFigure(GameStage.this)
+								moveTo(getScreenWidth(), figure.getY(), ANIMATION_SPEED * 2),
+								nextFigure(PlayStage.this)
 						));
 					} else {
 						brush.moveToOriginalPosition();
@@ -177,11 +177,11 @@ class GameStage extends Stage {
 			};
 		}
 
-		static Action nextFigure(final GameStage gameStage) {
+		static Action nextFigure(final PlayStage playStage) {
 			return new Action() {
 				@Override
 				public boolean act(float delta) {
-					gameStage.next();
+					playStage.next();
 					return true;
 				}
 			};

@@ -1,25 +1,21 @@
 package pl.lonski.edunomator.game.numbers;
 
-import static pl.lonski.edunomator.Edunomator.SCREEN_HEIGHT;
-import static pl.lonski.edunomator.Edunomator.SCREEN_WIDTH;
-
 import java.util.*;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.utils.viewport.Viewport;
 
-import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.Speaker;
+import pl.lonski.edunomator.game.Game;
+import pl.lonski.edunomator.game.GameStage;
 
 public class NumbersGame implements Game {
 
 	private Stage stage;
 	private Speaker.Provider speakerProvider;
 	private Speaker speaker;
-	private List<Class<? extends Stage>> stageQueue;
+	private List<Class<? extends GameStage>> stageQueue;
 
 	public NumbersGame(Speaker.Provider speakerProvider) {
 		this.speakerProvider = speakerProvider;
@@ -52,25 +48,12 @@ public class NumbersGame implements Game {
 			stageQueue.remove(stageClass);
 		}
 		try {
-			launchStage(stageClass.getConstructor(NumbersGame.class).newInstance(this));
+			stage = stageClass.getConstructor(NumbersGame.class).newInstance(this);
+			Gdx.input.setInputProcessor(stage);
 		} catch (Exception e) {
 			System.out.println("Failed to create next stage: " + e.getMessage());
 			e.printStackTrace();
 		}
-	}
-
-	private void launchStage(Stage stage) {
-		this.stage = stage;
-
-		Viewport viewport = stage.getViewport();
-		viewport.update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
-		viewport.apply();
-
-		OrthographicCamera camera = (OrthographicCamera) stage.getCamera();
-		camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
-		camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
-
-		Gdx.input.setInputProcessor(stage);
 	}
 
 	private void populateStageQueue() {

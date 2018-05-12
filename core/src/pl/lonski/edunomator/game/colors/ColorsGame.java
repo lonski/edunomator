@@ -9,8 +9,8 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Json;
 
-import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.Speaker;
+import pl.lonski.edunomator.game.Game;
 
 public class ColorsGame implements Game {
 
@@ -53,7 +53,7 @@ public class ColorsGame implements Game {
 		Collections.shuffle(figures);
 
 		speaker = speakerProvider.get(new Locale(config.language));
-		stage = new GameStage(this);
+		stage = new PlayStage(this);
 		Gdx.input.setInputProcessor(stage);
 
 		return this;

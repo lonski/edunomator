@@ -2,9 +2,8 @@ package pl.lonski.edunomator.game.numbers;
 
 import static com.badlogic.gdx.physics.box2d.BodyDef.BodyType.DynamicBody;
 import static com.badlogic.gdx.physics.box2d.BodyDef.BodyType.StaticBody;
-import static pl.lonski.edunomator.Edunomator.SCREEN_WIDTH;
-import static pl.lonski.edunomator.util.TextureUtils.readCoords;
 import static pl.lonski.edunomator.physics.WorldManager.PIXELS_TO_METERS;
+import static pl.lonski.edunomator.util.TextureUtils.readCoords;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,15 +16,16 @@ import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 
-import pl.lonski.edunomator.*;
+import pl.lonski.edunomator.Speaker;
+import pl.lonski.edunomator.TextureActor;
+import pl.lonski.edunomator.game.GameStage;
 import pl.lonski.edunomator.physics.WorldManager;
 import pl.lonski.edunomator.util.RandomUtils;
 
-class AppleStage extends Stage {
+class AppleStage extends GameStage {
 
 	private static final List<Vector2> APPLE_COORDS = readAppleCoords();
 
@@ -40,7 +40,8 @@ class AppleStage extends Stage {
 
 	public AppleStage(NumbersGame game) {
 		this.game = game;
-		worldManager = new WorldManager();
+		worldManager = new WorldManager(getScreenWidth(), getScreenHeight());
+		configureViewport(1f);
 		speaker = game.getSpeaker();
 
 		tree = new Tree();
@@ -48,7 +49,7 @@ class AppleStage extends Stage {
 		addActor(tree);
 
 		basket = new Basket();
-		basket.setPosition(SCREEN_WIDTH - basket.getWidth(), 0);
+		basket.setPosition(getScreenWidth() - basket.getWidth(), 0);
 		basket.createBody(worldManager.getWorld());
 		addActor(basket);
 

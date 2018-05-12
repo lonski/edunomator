@@ -2,10 +2,8 @@ package pl.lonski.edunomator.game.numbers;
 
 import static com.badlogic.gdx.physics.box2d.BodyDef.BodyType.DynamicBody;
 import static com.badlogic.gdx.physics.box2d.BodyDef.BodyType.KinematicBody;
-import static pl.lonski.edunomator.Edunomator.SCREEN_HEIGHT;
-import static pl.lonski.edunomator.Edunomator.SCREEN_WIDTH;
-import static pl.lonski.edunomator.util.TextureUtils.readCoords;
 import static pl.lonski.edunomator.physics.WorldManager.PIXELS_TO_METERS;
+import static pl.lonski.edunomator.util.TextureUtils.readCoords;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,16 +13,20 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.*;
-import com.badlogic.gdx.scenes.scene2d.*;
+import com.badlogic.gdx.scenes.scene2d.Action;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
+import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 
-import pl.lonski.edunomator.*;
+import pl.lonski.edunomator.Speaker;
+import pl.lonski.edunomator.TextureActor;
+import pl.lonski.edunomator.game.GameStage;
 import pl.lonski.edunomator.physics.BodyUserData;
 import pl.lonski.edunomator.physics.WorldManager;
 import pl.lonski.edunomator.util.RandomUtils;
 
-public class BearStage extends Stage {
+public class BearStage extends GameStage {
 
 	private final NumbersGame game;
 	private final WorldManager worldManager;
@@ -40,7 +42,8 @@ public class BearStage extends Stage {
 
 	public BearStage(NumbersGame game) {
 		this.game = game;
-		this.worldManager = new WorldManager(new Vector2(0f, -1f), false);
+		this.worldManager = new WorldManager(getScreenWidth(), getScreenHeight(), new Vector2(0f, -1f), false);
+		configureViewport(1f);
 		this.bears = new ArrayList<>();
 		this.bearsBowl = new ArrayList<>();
 		this.speaker = game.getSpeaker();
@@ -52,23 +55,59 @@ public class BearStage extends Stage {
 		updateCountLabel();
 		addActor(countLabel);
 
-		bowl = new Bowl(bears);
+		bowl = new Bowl();
 		bowl.createBody(worldManager.getWorld());
+
+		bowl.addListener(new DragListener() {
+
+			@Override
+			public void touchDragged(InputEvent event, float x, float y, int pointer) {
+				float newX = bowl.getX() + x - getWidth() / 2;
+				newX = Math.max(0, newX);
+				newX = Math.min(newX, getScreenWidth() - getWidth());
+				float diff = (newX - bowl.getX()) / getScreenWidth();
+				bowl.body.setLinearVelocity(diff * PIXELS_TO_METERS, 0);
+
+				if (bowl.getX() < 0) {
+					bowl.body.setLinearVelocity(Math.max(bowl.body.getLinearVelocity().x, 0), 0);
+				} else if (bowl.getX() > getScreenWidth() - getWidth()) {
+					bowl.body.setLinearVelocity(Math.min(bowl.body.getLinearVelocity().x, 0), 0);
+				}
+
+				for (Bear bear : bears) {
+					if (bear.getBounds().overlaps(bowl.getBounds())) {
+						Body bearBody = bear.getBody();
+						bearBody.setLinearVelocity(bowl.body.getLinearVelocity().x, bearBody.getLinearVelocity().y);
+					}
+				}
+			}
+
+			@Override
+			public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
+				bowl.body.setLinearVelocity(0, 0);
+				for (Bear bear : bears) {
+					if (bear.getBounds().overlaps(bowl.getBounds())) {
+						bear.getBody().setLinearVelocity(0, bear.getBody().getLinearVelocity().y);
+					}
+				}
+				super.touchUp(event, x, y, pointer, button);
+			}
+		});
 		addActor(bowl);
 		bowl.setZIndex(10);
 	}
 
 	private void updateCountLabel() {
 		countLabel.setNumber(bearsBowl.size());
-		countLabel.setPosition(SCREEN_WIDTH / 2 - countLabel.getWidth() * countLabel.getScaleX() / 2,
-				SCREEN_HEIGHT / 2 - countLabel.getHeight() * countLabel.getScaleY() / 2);
+		countLabel.setPosition(getScreenWidth() / 2 - countLabel.getWidth() * countLabel.getScaleX() / 2,
+				getScreenHeight() / 2 - countLabel.getHeight() * countLabel.getScaleY() / 2);
 	}
 
 	private void spawnBear() {
 		Bear bear = new Bear();
 		bear.setPosition(
-				RandomUtils.nextInt((int) bear.getWidth(), (int) (SCREEN_WIDTH - bear.getWidth())),
-				SCREEN_HEIGHT + bear.getHeight()
+				RandomUtils.nextInt((int) bear.getWidth(), (int) (getScreenWidth() - bear.getWidth())),
+				getScreenHeight() + bear.getHeight()
 		);
 		bear.setRotation(RandomUtils.nextInt(360));
 		bear.createBody(worldManager.getWorld());
@@ -165,43 +204,8 @@ public class BearStage extends Stage {
 		private static final List<Vector2> VERTICES = readVertices();
 		private Body body;
 
-		Bowl(final List<Bear> bears) {
+		Bowl() {
 			super(new Texture(Gdx.files.internal("numbers/bears/bowl.png")));
-			addListener(new DragListener() {
-
-				@Override
-				public void touchDragged(InputEvent event, float x, float y, int pointer) {
-					float newX = getX() + x - getWidth() / 2;
-					newX = Math.max(0, newX);
-					newX = Math.min(newX, SCREEN_WIDTH - getWidth());
-					float diff = (newX - getX()) / SCREEN_WIDTH;
-					body.setLinearVelocity(diff * PIXELS_TO_METERS, 0);
-
-					if (getX() < 0) {
-						body.setLinearVelocity(Math.max(body.getLinearVelocity().x, 0), 0);
-					} else if (getX() > SCREEN_WIDTH - getWidth()) {
-						body.setLinearVelocity(Math.min(body.getLinearVelocity().x, 0), 0);
-					}
-
-					for (Bear bear : bears) {
-						if (bear.getBounds().overlaps(getBounds())) {
-							Body bearBody = bear.getBody();
-							bearBody.setLinearVelocity(body.getLinearVelocity().x, bearBody.getLinearVelocity().y);
-						}
-					}
-				}
-
-				@Override
-				public void touchUp(InputEvent event, float x, float y, int pointer, int button) {
-					body.setLinearVelocity(0, 0);
-					for (Bear bear : bears) {
-						if (bear.getBounds().overlaps(getBounds())) {
-							bear.getBody().setLinearVelocity(0, bear.getBody().getLinearVelocity().y);
-						}
-					}
-					super.touchUp(event, x, y, pointer, button);
-				}
-			});
 		}
 
 		@Override

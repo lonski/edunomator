@@ -1,20 +1,17 @@
 package pl.lonski.edunomator.game.numbers;
 
-import static pl.lonski.edunomator.Edunomator.SCREEN_HEIGHT;
-import static pl.lonski.edunomator.Edunomator.SCREEN_WIDTH;
-
 import java.util.ArrayList;
 import java.util.List;
 
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
-import pl.lonski.edunomator.util.RandomUtils;
+import pl.lonski.edunomator.game.GameStage;
 import pl.lonski.edunomator.physics.WorldManager;
+import pl.lonski.edunomator.util.RandomUtils;
 
-class BalloonStage extends Stage {
+class BalloonStage extends GameStage {
 
 	private final NumbersGame game;
 	private final NumberActor countLabel;
@@ -22,7 +19,8 @@ class BalloonStage extends Stage {
 	private final List<Balloon> balloons;
 
 	public BalloonStage(NumbersGame game) {
-		this.world = new WorldManager(new Vector2(0, 0));
+		this.world = new WorldManager(getScreenWidth(), getScreenHeight(), new Vector2(0, 0));
+		configureViewport(1f);
 		this.game = game;
 		this.balloons = new ArrayList<>();
 
@@ -33,8 +31,8 @@ class BalloonStage extends Stage {
 
 		int numBalloons = RandomUtils.nextInt(3, 10);
 		for (int i = 0; i < numBalloons; i++) {
-			float x = RandomUtils.nextInt((int) (SCREEN_WIDTH * 0.3), (int) (SCREEN_WIDTH * 0.7));
-			float y = RandomUtils.nextInt((int) (SCREEN_HEIGHT * 0.3), (int) (SCREEN_HEIGHT * 0.7));
+			float x = RandomUtils.nextInt((int) (getScreenWidth() * 0.3), (int) (getScreenWidth() * 0.7));
+			float y = RandomUtils.nextInt((int) (getScreenHeight() * 0.3), (int) (getScreenHeight() * 0.7));
 			final Balloon balloon = new Balloon(x, y, world);
 			balloon.poke();
 			balloon.addListener(onBalloonTouch(balloon));
@@ -47,8 +45,8 @@ class BalloonStage extends Stage {
 
 	private void updateCountLabel() {
 		countLabel.setNumber(balloons.size());
-		countLabel.setPosition(SCREEN_WIDTH / 2 - countLabel.getWidth() * countLabel.getScaleX() / 2,
-				SCREEN_HEIGHT / 2 - countLabel.getHeight() * countLabel.getScaleY() / 2);
+		countLabel.setPosition(getScreenWidth() / 2 - countLabel.getWidth() * countLabel.getScaleX() / 2,
+				getScreenHeight() / 2 - countLabel.getHeight() * countLabel.getScaleY() / 2);
 	}
 
 	@Override

@@ -44,4 +44,5 @@ public class GameMenu implements Game {
 		this.stage = stage;
 		Gdx.input.setInputProcessor(this.stage);
 	}
+
 }

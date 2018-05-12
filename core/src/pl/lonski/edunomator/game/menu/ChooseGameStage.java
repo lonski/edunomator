@@ -4,24 +4,23 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 
-import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.TextureActor;
+import pl.lonski.edunomator.game.Game;
+import pl.lonski.edunomator.game.GameStage;
 
-class ChooseGameStage extends Stage {
+class ChooseGameStage extends GameStage {
 
-	private final float screenWidth = Gdx.graphics.getWidth();
-	private final float screenHeight = Gdx.graphics.getHeight();
 	private final GameMenu menu;
 
 	ChooseGameStage(final GameMenu menu) {
+		super(0.5f);
 		this.menu = menu;
 
 		TextureActor colorsBtn = new TextureActor(new Texture(Gdx.files.internal("game_icons/colors.png")));
 		colorsBtn.setPosition(
-				screenWidth / 2 - colorsBtn.getWidth() / 2,
-				screenHeight / 2 - colorsBtn.getHeight() / 2
+				getScreenWidth() / 2 - colorsBtn.getWidth() / 2,
+				getScreenHeight() / 2 - colorsBtn.getHeight() / 2
 		);
 		colorsBtn.addListener(new InputListener() {
 			@Override
@@ -35,7 +34,7 @@ class ChooseGameStage extends Stage {
 		TextureActor numbersBtn = new TextureActor(new Texture(Gdx.files.internal("game_icons/numbers.png")));
 		numbersBtn.setPosition(
 				colorsBtn.getX() + colorsBtn.getWidth() * 1.2f,
-				screenHeight / 2 - numbersBtn.getHeight() / 2
+				getScreenHeight() / 2 - numbersBtn.getHeight() / 2
 		);
 		numbersBtn.addListener(new InputListener() {
 			@Override

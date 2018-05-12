@@ -1,8 +1,6 @@
 package pl.lonski.edunomator.physics;
 
 import static com.badlogic.gdx.physics.box2d.BodyDef.BodyType.StaticBody;
-import static pl.lonski.edunomator.Edunomator.SCREEN_HEIGHT;
-import static pl.lonski.edunomator.Edunomator.SCREEN_WIDTH;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
@@ -15,6 +13,9 @@ public class WorldManager {
 
 	public static final float PIXELS_TO_METERS = 100f;
 
+	private final float screenWidth;
+	private final float screenHeight;
+
 	private World world;
 	private Box2DDebug debugRender;
 
@@ -24,17 +25,23 @@ public class WorldManager {
 	private Body rightWall;
 	private boolean freezed;
 
-	public WorldManager() {
-		this(new Vector2(0, -10));
+	public WorldManager(float screenWidth, float screenHeight) {
+		this(screenWidth, screenHeight, new Vector2(0, -10));
 	}
 
-	public WorldManager(Vector2 gravity, boolean walls) {
+	public WorldManager(float screenWidth, float screenHeight, Vector2 gravity) {
+		this(screenWidth, screenHeight, gravity, true);
+	}
 
-		world = new World(gravity, true);
+	public WorldManager(float screenWidth, float screenHeight, Vector2 gravity, boolean walls) {
+
+		this.screenWidth = screenWidth;
+		this.screenHeight = screenHeight;
+		this.world = new World(gravity, true);
 
 		if (walls) {
-			float w = SCREEN_WIDTH / PIXELS_TO_METERS;
-			float h = SCREEN_HEIGHT / PIXELS_TO_METERS;
+			float w = screenWidth / PIXELS_TO_METERS;
+			float h = screenHeight / PIXELS_TO_METERS;
 
 			float thickness = 10;
 			floor = createWall(w / 2, -thickness / 2f, w + 2 * thickness, thickness);
@@ -42,11 +49,7 @@ public class WorldManager {
 			leftWall = createWall(-thickness / 2f, h / 2, thickness, h + 2 * thickness);
 			rightWall = createWall(w + thickness / 2f, h / 2, thickness, h + 2 * thickness);
 		}
-		debugRender = new Box2DDebug();
-	}
-
-	public WorldManager(Vector2 gravity) {
-		this(gravity, true);
+		debugRender = new Box2DDebug(screenWidth, screenHeight);
 	}
 
 	public World getWorld() {
@@ -102,10 +105,10 @@ public class WorldManager {
 		private Viewport viewport;
 		private Box2DDebugRenderer debugRenderer;
 
-		Box2DDebug() {
-			camera = new OrthographicCamera(SCREEN_WIDTH, SCREEN_HEIGHT);
-			camera.setToOrtho(false, SCREEN_WIDTH, SCREEN_HEIGHT);
-			viewport = new FillViewport(SCREEN_WIDTH / 40, SCREEN_HEIGHT / 40, camera);
+		Box2DDebug(float screenWidth, float screenHeight) {
+			camera = new OrthographicCamera(screenWidth, screenHeight);
+			camera.setToOrtho(false, screenWidth, screenHeight);
+			viewport = new FillViewport(screenWidth / 40, screenHeight / 40, camera);
 			viewport.apply();
 			camera.position.set(camera.viewportWidth / 4, camera.viewportHeight / 4, 0);
 
