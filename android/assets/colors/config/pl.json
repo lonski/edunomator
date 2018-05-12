@@ -1,0 +1,117 @@
+{
+	"language": "pl",
+	"brushes": [
+		{
+			"id": 1,
+			"spokenName": "Czerwony",
+			"textureFile": "brush/red.png"
+		},
+		{
+			"id": 2,
+			"spokenName": "Zielony",
+			"textureFile": "brush/green.png"
+		},
+		{
+			"id": 3,
+			"spokenName": "Niebieski",
+			"textureFile": "brush/blue.png"
+		},
+		{
+			"id": 4,
+			"spokenName": "Żółty",
+			"textureFile": "brush/yellow.png"
+		},
+		{
+			"id": 5,
+			"spokenName": "Różowy",
+			"textureFile": "brush/pink.png"
+		},
+		{
+			"id": 6,
+			"spokenName": "Czarny",
+			"textureFile": "brush/black.png"
+		},
+		{
+			"id": 7,
+			"spokenName": "Brązowy",
+			"textureFile": "brush/brown.png"
+		},
+		{
+			"id": 8,
+			"spokenName": "Szary",
+			"textureFile": "brush/grey.png"
+		},
+		{
+			"id": 9,
+			"spokenName": "Fioletowy",
+			"textureFile": "brush/purple.png"
+		},
+		{
+			"id": 10,
+			"spokenName": "Pomarańczowy",
+			"textureFile": "brush/orange.png"
+		}
+	],
+	"figures": [
+		{
+			"brushId": 1,
+			"spokenName": "czerwona biedronka",
+			"textureFile": "figure/ladybird.png",
+			"textureFileColor": "figure/ladybird_color.png"
+		},
+		{
+			"brushId": 4,
+			"spokenName": "żółta żyrafa",
+			"textureFile": "figure/giraffe.png",
+			"textureFileColor": "figure/giraffe_color.png"
+		},
+		{
+			"brushId": 5,
+			"spokenName": "różowa świnka",
+			"textureFile": "figure/pig.png",
+			"textureFileColor": "figure/pig_color.png"
+		},
+		{
+			"brushId": 2,
+			"spokenName": "zielona żabka",
+			"textureFile": "figure/frog.png",
+			"textureFileColor": "figure/frog_color.png"
+		},
+		{
+			"brushId": 3,
+			"spokenName": "niebieski rekin",
+			"textureFile": "figure/shark.png",
+			"textureFileColor": "figure/shark_color.png"
+		},
+		{
+			"brushId": 6,
+			"spokenName": "czarny nietoperz",
+			"textureFile": "figure/bat.png",
+			"textureFileColor": "figure/bat_color.png"
+		},
+		{
+			"brushId": 8,
+			"spokenName": "szara myszka",
+			"textureFile": "figure/mouse.png",
+			"textureFileColor": "figure/mouse_color.png"
+		},
+		{
+			"brushId": 7,
+			"spokenName": "brązowa wiewiórka",
+			"textureFile": "figure/squirrel.png",
+			"textureFileColor": "figure/squirrel_color.png"
+		},
+		{
+			"brushId": 9,
+			"spokenName": "fioletowa ośmiornica",
+			"textureFile": "figure/octopus.png",
+			"textureFileColor": "figure/octopus_color.png"
+		},
+		{
+			"brushId": 10,
+			"spokenName": "pomarańczowy lew",
+			"textureFile": "figure/lion.png",
+			"textureFileColor": "figure/lion_color.png"
+		}
+	]
+}

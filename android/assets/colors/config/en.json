@@ -1,0 +1,117 @@
+{
+	"language": "en",
+	"brushes": [
+		{
+			"id": 1,
+			"spokenName": "red",
+			"textureFile": "brush/red.png"
+		},
+		{
+			"id": 2,
+			"spokenName": "green",
+			"textureFile": "brush/green.png"
+		},
+		{
+			"id": 3,
+			"spokenName": "blue",
+			"textureFile": "brush/blue.png"
+		},
+		{
+			"id": 4,
+			"spokenName": "yellow",
+			"textureFile": "brush/yellow.png"
+		},
+		{
+			"id": 5,
+			"spokenName": "pink",
+			"textureFile": "brush/pink.png"
+		},
+		{
+			"id": 6,
+			"spokenName": "black",
+			"textureFile": "brush/black.png"
+		},
+		{
+			"id": 7,
+			"spokenName": "brown",
+			"textureFile": "brush/brown.png"
+		},
+		{
+			"id": 8,
+			"spokenName": "gray",
+			"textureFile": "brush/grey.png"
+		},
+		{
+			"id": 9,
+			"spokenName": "purple",
+			"textureFile": "brush/purple.png"
+		},
+		{
+			"id": 10,
+			"spokenName": "orange",
+			"textureFile": "brush/orange.png"
+		}
+	],
+	"figures": [
+		{
+			"brushId": 1,
+			"spokenName": "red ladybird",
+			"textureFile": "figure/ladybird.png",
+			"textureFileColor": "figure/ladybird_color.png"
+		},
+		{
+			"brushId": 4,
+			"spokenName": "yellow giraffe",
+			"textureFile": "figure/giraffe.png",
+			"textureFileColor": "figure/giraffe_color.png"
+		},
+		{
+			"brushId": 5,
+			"spokenName": "pink pig",
+			"textureFile": "figure/pig.png",
+			"textureFileColor": "figure/pig_color.png"
+		},
+		{
+			"brushId": 2,
+			"spokenName": "green frog",
+			"textureFile": "figure/frog.png",
+			"textureFileColor": "figure/frog_color.png"
+		},
+		{
+			"brushId": 3,
+			"spokenName": "blue shark",
+			"textureFile": "figure/shark.png",
+			"textureFileColor": "figure/shark_color.png"
+		},
+		{
+			"brushId": 6,
+			"spokenName": "black bat",
+			"textureFile": "figure/bat.png",
+			"textureFileColor": "figure/bat_color.png"
+		},
+		{
+			"brushId": 8,
+			"spokenName": "gray mouse",
+			"textureFile": "figure/mouse.png",
+			"textureFileColor": "figure/mouse_color.png"
+		},
+		{
+			"brushId": 7,
+			"spokenName": "brown squirrel",
+			"textureFile": "figure/squirrel.png",
+			"textureFileColor": "figure/squirrel_color.png"
+		},
+		{
+			"brushId": 9,
+			"spokenName": "purple octopus",
+			"textureFile": "figure/octopus.png",
+			"textureFileColor": "figure/octopus_color.png"
+		},
+		{
+			"brushId": 10,
+			"spokenName": "orange lion",
+			"textureFile": "figure/lion.png",
+			"textureFileColor": "figure/lion_color.png"
+		}
+	]
+}
