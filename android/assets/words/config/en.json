@@ -1,0 +1,411 @@
+{
+	"datasets": [
+		{
+			"directory": "fruits/",
+			"name": "Fruits",
+			"wordFiles": [
+				{
+					"filename": "morela.jpg",
+					"name": "apricots",
+					"isPlural": true
+				},
+				{
+					"filename": "kokos.jpg",
+					"name": "coconut"
+				},
+				{
+					"filename": "wisnia.jpg",
+					"name": "cherry"
+				},
+				{
+					"filename": "brzoskwinia.jpg",
+					"name": "peach"
+				},
+				{
+					"filename": "banany.jpg",
+					"name": "banana"
+				},
+				{
+					"filename": "kiwi.jpg",
+					"name": "kiwi"
+				},
+				{
+					"filename": "winogron.jpg",
+					"name": "grapes",
+					"isPlural": true
+				},
+				{
+					"filename": "daktyl.jpg",
+					"name": "dates",
+					"isPlural": true
+				},
+				{
+					"filename": "grejpfrut.jpg",
+					"name": "grapefruit"
+				},
+				{
+					"filename": "jezyny.jpg",
+					"name": "blackberries",
+					"isPlural": true
+				},
+				{
+					"filename": "pomelo.jpg",
+					"name": "pomelos"
+				},
+				{
+					"filename": "mango.jpg",
+					"name": "mango"
+				},
+				{
+					"filename": "dzika_roza.jpg",
+					"name": "wild rose"
+				},
+				{
+					"filename": "cytryna.jpg",
+					"name": "lemon"
+				},
+				{
+					"filename": "pigwa.jpg",
+					"name": "quince"
+				},
+				{
+					"filename": "mandarynka.jpg",
+					"name": "mandarin"
+				},
+				{
+					"filename": "ananas.jpg",
+					"name": "pineapple"
+				},
+				{
+					"filename": "miechunka.jpg",
+					"name": "physalis"
+				},
+				{
+					"filename": "jagody.jpg",
+					"name": "blueberries",
+					"isPlural": true
+				},
+				{
+					"filename": "gruszka.jpg",
+					"name": "pear"
+				},
+				{
+					"filename": "kaki.jpg",
+					"name": "kaki"
+				},
+				{
+					"filename": "sliwka.jpg",
+					"name": "plum"
+				},
+				{
+					"filename": "arbuz.jpg",
+					"name": "watermelon"
+				},
+				{
+					"filename": "limonka.jpg",
+					"name": "lime"
+				},
+				{
+					"filename": "truskawka.jpg",
+					"name": "strawberry"
+				},
+				{
+					"filename": "porzeczka.jpg",
+					"name": "currant"
+				},
+				{
+					"filename": "maliny.jpg",
+					"name": "raspberries",
+					"isPlural": true
+				},
+				{
+					"filename": "granat.jpg",
+					"name": "pomegranate"
+				},
+				{
+					"filename": "poziomka.jpg",
+					"name": "wild strawberry"
+				},
+				{
+					"filename": "jablko.jpg",
+					"name": "apple"
+				},
+				{
+					"filename": "pomarancza.jpg",
+					"name": "orange"
+				},
+				{
+					"filename": "liczi.jpg",
+					"name": "lychee"
+				},
+				{
+					"filename": "nektarynka.jpg",
+					"name": "nectarine"
+				},
+				{
+					"filename": "agrest.jpg",
+					"name": "gooseberry"
+				},
+				{
+					"filename": "figa.jpg",
+					"name": "fig"
+				}
+			]
+		},
+		{
+			"directory": "animals/",
+			"name": "Animals",
+			"wordFiles": [
+				{
+					"filename": "kaczka.jpg",
+					"name": "duck"
+				},
+				{
+					"filename": "owca.jpg",
+					"name": "sheep"
+				},
+				{
+					"filename": "nosorozec.jpg",
+					"name": "rhinoceros"
+				},
+				{
+					"filename": "wiewiorka.jpg",
+					"name": "squirrel"
+				},
+				{
+					"filename": "wielblad.jpg",
+					"name": "camel"
+				},
+				{
+					"filename": "lew.jpg",
+					"name": "lion"
+				},
+				{
+					"filename": "kangur.jpg",
+					"name": "kangaroo"
+				},
+				{
+					"filename": "pingwin.jpg",
+					"name": "penguin"
+				},
+				{
+					"filename": "labedz.jpg",
+					"name": "swan"
+				},
+				{
+					"filename": "sarna.jpg",
+					"name": "roe"
+				},
+				{
+					"filename": "sowa.jpg",
+					"name": "owl"
+				},
+				{
+					"filename": "lama.jpg",
+					"name": "lama"
+				},
+				{
+					"filename": "kura.jpg",
+					"name": "chicken"
+				},
+				{
+					"filename": "zebra.jpg",
+					"name": "zebra"
+				},
+				{
+					"filename": "tygrys.jpg",
+					"name": "tiger"
+				},
+				{
+					"filename": "panda.jpg",
+					"name": "panda"
+				},
+				{
+					"filename": "bocian.jpg",
+					"name": "stork"
+				},
+				{
+					"filename": "nietoperz.jpg",
+					"name": "bat"
+				},
+				{
+					"filename": "koala.jpg",
+					"name": "koala"
+				},
+				{
+					"filename": "jez.jpg",
+					"name": "hedgehog"
+				}
+			]
+		},
+		{
+			"directory": "vegetables/",
+			"name": "Vegetables",
+			"wordFiles": [
+				{
+					"filename": "patison.jpg",
+					"name": "patison"
+				},
+				{
+					"filename": "brokul.jpg",
+					"name": "broccoli"
+				},
+				{
+					"filename": "burak.jpg",
+					"name": "beetroot"
+				},
+				{
+					"filename": "kapusta.jpg",
+					"name": "cabbage"
+				},
+				{
+					"filename": "czosnek.jpg",
+					"name": "garlic"
+				},
+				{
+					"filename": "cebula.jpg",
+					"name": "onion"
+				},
+				{
+					"filename": "ziemniak.jpg",
+					"name": "potato"
+				},
+				{
+					"filename": "pietruszka.jpg",
+					"name": "parsley"
+				},
+				{
+					"filename": "kalafior.jpg",
+					"name": "cauliflower"
+				},
+				{
+					"filename": "awokado.jpg",
+					"name": "avocado"
+				},
+				{
+					"filename": "kabaczek.jpg",
+					"name": "cucurbit"
+				},
+				{
+					"filename": "por.jpg",
+					"name": "leek"
+				},
+				{
+					"filename": "pomidory.jpg",
+					"name": "tomatoes",
+					"isPlural": true
+				},
+				{
+					"filename": "dynia.jpg",
+					"name": "pumpkin"
+				},
+				{
+					"filename": "rzodkiewka.jpg",
+					"name": "radish"
+				},
+				{
+					"filename": "ogorek.jpg",
+					"name": "cucumber"
+				},
+				{
+					"filename": "kukurydza.jpg",
+					"name": "corn"
+				},
+				{
+					"filename": "baklazan.jpg",
+					"name": "eggplant"
+				},
+				{
+					"filename": "cukinia.jpg",
+					"name": "courgette"
+				},
+				{
+					"filename": "papryka.jpg",
+					"name": "paprika"
+				},
+				{
+					"filename": "szczypiorek.jpg",
+					"name": "chive"
+				},
+				{
+					"filename": "groszek.jpg",
+					"name": "green peas"
+				},
+				{
+					"filename": "marchewka.jpg",
+					"name": "carrot"
+				},
+				{
+					"filename": "fasolka.jpg",
+					"name": "bean"
+				},
+				{
+					"filename": "seler.jpg",
+					"name": "celery"
+				}
+			]
+		},
+		{
+			"directory": "languages/",
+			"name": "Programming languages",
+			"wordFiles": [
+				{
+					"filename": "scala.jpg",
+					"name": "scala"
+				},
+				{
+					"filename": "rust.jpg",
+					"name": "rust"
+				},
+				{
+					"filename": "go.jpg",
+					"name": "go"
+				},
+				{
+					"filename": "ruby.jpg",
+					"name": "ruby"
+				},
+				{
+					"filename": "haskell.jpg",
+					"name": "haskell"
+				},
+				{
+					"filename": "sql.jpg",
+					"name": "sql"
+				},
+				{
+					"filename": "java.jpg",
+					"name": "java"
+				},
+				{
+					"filename": "c#.jpg",
+					"name": "C Sharp"
+				},
+				{
+					"filename": "lua.jpg",
+					"name": "lua"
+				},
+				{
+					"filename": "python.jpg",
+					"name": "python"
+				},
+				{
+					"filename": "c++.jpg",
+					"name": "c++"
+				},
+				{
+					"filename": "php.jpg",
+					"name": "php"
+				}
+			]
+		}
+	],
+	"language": "en_US",
+	"spokenSentences": {
+		"examAskPlural": "Where are %s?",
+		"examAskSingular": "Where is %s?",
+		"examGuessCorrect": "Correct!",
+		"examGuessIncorrect": "No, you are wrong.",
+		"loading": "Loading (%d/%d)"
+	}
+}

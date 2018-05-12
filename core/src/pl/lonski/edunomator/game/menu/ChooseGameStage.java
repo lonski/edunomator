@@ -19,7 +19,7 @@ class ChooseGameStage extends GameStage {
 
 		TextureActor colorsBtn = new TextureActor(new Texture(Gdx.files.internal("game_icons/colors.png")));
 		colorsBtn.setPosition(
-				getScreenWidth() / 2 - colorsBtn.getWidth() / 2,
+				getScreenWidth() / 4 - colorsBtn.getWidth() / 2,
 				getScreenHeight() / 2 - colorsBtn.getHeight() / 2
 		);
 		colorsBtn.addListener(new InputListener() {
@@ -44,5 +44,19 @@ class ChooseGameStage extends GameStage {
 			}
 		});
 		addActor(numbersBtn);
+
+		TextureActor wordsBtn = new TextureActor(new Texture(Gdx.files.internal("game_icons/words.png")));
+		wordsBtn.setPosition(
+				numbersBtn.getX() + numbersBtn.getWidth() * 1.2f,
+				getScreenHeight() / 2 - wordsBtn.getHeight() / 2
+		);
+		wordsBtn.addListener(new InputListener() {
+			@Override
+			public boolean touchDown(InputEvent event, float x, float y, int pointer, int button) {
+				menu.start(Game.Type.WORDS_GAME);
+				return true;
+			}
+		});
+		addActor(wordsBtn);
 	}
 }

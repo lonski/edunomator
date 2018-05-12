@@ -6,7 +6,6 @@ import static pl.lonski.edunomator.game.colors.PlayStage.FigureAction.*;
 import java.security.SecureRandom;
 import java.util.*;
 
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.Actor;
@@ -28,7 +27,6 @@ class PlayStage extends GameStage {
 
 	PlayStage(ColorsGame game) {
 		super(0.5f);
-		getViewport().update(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), true);
 		this.game = game;
 		this.random = new SecureRandom();
 		this.brushIds = new ArrayList<>();

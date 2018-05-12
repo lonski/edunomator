@@ -1,6 +1,7 @@
 package pl.lonski.edunomator.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.InputAdapter;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.Viewport;
@@ -27,6 +28,10 @@ public abstract class GameStage extends Stage {
 
 	public float getScreenHeight() {
 		return screenHeight;
+	}
+
+	public InputAdapter getInputAdapter() {
+		return this;
 	}
 
 	protected void configureViewport(float screenScale) {

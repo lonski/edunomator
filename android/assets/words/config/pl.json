@@ -1,0 +1,360 @@
+{
+	"datasets": [
+		{
+			"directory": "fruits/",
+			"name": "Owoce",
+			"wordFiles": [
+				{
+					"filename": "morela.jpg",
+					"name": "morele",
+					"isPlural": true
+				},
+				{
+					"filename": "kokos.jpg",
+					"name": "kokos"
+				},
+				{
+					"filename": "wisnia.jpg",
+					"name": "wiśnie",
+					"isPlural": true
+				},
+				{
+					"filename": "brzoskwinia.jpg",
+					"name": "brzoskwinia"
+				},
+				{
+					"filename": "banany.jpg",
+					"name": "banany",
+					"isPlural": true
+				},
+				{
+					"filename": "kiwi.jpg",
+					"name": "kiwi"
+				},
+				{
+					"filename": "winogron.jpg",
+					"name": "winogrona",
+					"isPlural": true
+				},
+				{
+					"filename": "daktyl.jpg",
+					"name": "daktyle",
+					"isPlural": true
+				},
+				{
+					"filename": "grejpfrut.jpg",
+					"name": "grejpfrut"
+				},
+				{
+					"filename": "jezyny.jpg",
+					"name": "jeżyny",
+					"isPlural": true
+				},
+				{
+					"filename": "pomelo.jpg",
+					"name": "pomelo"
+				},
+				{
+					"filename": "mango.jpg",
+					"name": "mango"
+				},
+				{
+					"filename": "dzika_roza.jpg",
+					"name": "dzika róża"
+				},
+				{
+					"filename": "cytryna.jpg",
+					"name": "cytryny",
+					"isPlural": true
+				},
+				{
+					"filename": "pigwa.jpg",
+					"name": "pigwa"
+				},
+				{
+					"filename": "mandarynka.jpg",
+					"name": "mandarynka"
+				},
+				{
+					"filename": "ananas.jpg",
+					"name": "ananas"
+				},
+				{
+					"filename": "miechunka.jpg",
+					"name": "miechunka"
+				},
+				{
+					"filename": "jagody.jpg",
+					"name": "jagody",
+					"isPlural": true
+				},
+				{
+					"filename": "gruszka.jpg",
+					"name": "gruszka"
+				},
+				{
+					"filename": "kaki.jpg",
+					"name": "kaki"
+				},
+				{
+					"filename": "sliwka.jpg",
+					"name": "śliwka"
+				},
+				{
+					"filename": "arbuz.jpg",
+					"name": "arbuz"
+				},
+				{
+					"filename": "limonka.jpg",
+					"name": "limonka"
+				},
+				{
+					"filename": "truskawka.jpg",
+					"name": "truskawka"
+				},
+				{
+					"filename": "porzeczka.jpg",
+					"name": "porzeczka"
+				},
+				{
+					"filename": "maliny.jpg",
+					"name": "maliny",
+					"isPlural": true
+				},
+				{
+					"filename": "granat.jpg",
+					"name": "granat"
+				},
+				{
+					"filename": "poziomka.jpg",
+					"name": "poziomka"
+				},
+				{
+					"filename": "jablko.jpg",
+					"name": "jabłko"
+				},
+				{
+					"filename": "pomarancza.jpg",
+					"name": "pomarańcza"
+				},
+				{
+					"filename": "liczi.jpg",
+					"name": "liczi"
+				},
+				{
+					"filename": "nektarynka.jpg",
+					"name": "nektarynka"
+				},
+				{
+					"filename": "agrest.jpg",
+					"name": "agrest"
+				},
+				{
+					"filename": "figa.jpg",
+					"name": "figa"
+				}
+			]
+		},
+		{
+			"directory": "animals/",
+			"name": "Zwierzęta",
+			"wordFiles": [
+				{
+					"filename": "kaczka.jpg",
+					"name": "kaczka"
+				},
+				{
+					"filename": "owca.jpg",
+					"name": "owca"
+				},
+				{
+					"filename": "nosorozec.jpg",
+					"name": "nosorożec"
+				},
+				{
+					"filename": "wiewiorka.jpg",
+					"name": "wiewiórka"
+				},
+				{
+					"filename": "wielblad.jpg",
+					"name": "wielbłąd"
+				},
+				{
+					"filename": "lew.jpg",
+					"name": "lew"
+				},
+				{
+					"filename": "kangur.jpg",
+					"name": "kangur"
+				},
+				{
+					"filename": "pingwin.jpg",
+					"name": "pingwin"
+				},
+				{
+					"filename": "labedz.jpg",
+					"name": "łabędź"
+				},
+				{
+					"filename": "sarna.jpg",
+					"name": "sarna"
+				},
+				{
+					"filename": "sowa.jpg",
+					"name": "sowa"
+				},
+				{
+					"filename": "lama.jpg",
+					"name": "lama"
+				},
+				{
+					"filename": "kura.jpg",
+					"name": "kura"
+				},
+				{
+					"filename": "zebra.jpg",
+					"name": "zebra"
+				},
+				{
+					"filename": "tygrys.jpg",
+					"name": "tygrys"
+				},
+				{
+					"filename": "panda.jpg",
+					"name": "panda"
+				},
+				{
+					"filename": "bocian.jpg",
+					"name": "bocian"
+				},
+				{
+					"filename": "nietoperz.jpg",
+					"name": "nietoperz"
+				},
+				{
+					"filename": "koala.jpg",
+					"name": "koala"
+				},
+				{
+					"filename": "jez.jpg",
+					"name": "jeż"
+				}
+			]
+		},
+		{
+			"directory": "vegetables/",
+			"name": "Warzywa",
+			"wordFiles": [
+				{
+					"filename": "patison.jpg",
+					"name": "patison"
+				},
+				{
+					"filename": "brokul.jpg",
+					"name": "brokuł"
+				},
+				{
+					"filename": "burak.jpg",
+					"name": "burak"
+				},
+				{
+					"filename": "kapusta.jpg",
+					"name": "kapusta"
+				},
+				{
+					"filename": "czosnek.jpg",
+					"name": "czosnek"
+				},
+				{
+					"filename": "cebula.jpg",
+					"name": "cebula"
+				},
+				{
+					"filename": "ziemniak.jpg",
+					"name": "ziemniak"
+				},
+				{
+					"filename": "pietruszka.jpg",
+					"name": "pietruszka"
+				},
+				{
+					"filename": "kalafior.jpg",
+					"name": "kalafior"
+				},
+				{
+					"filename": "awokado.jpg",
+					"name": "awokado"
+				},
+				{
+					"filename": "kabaczek.jpg",
+					"name": "kabaczek"
+				},
+				{
+					"filename": "por.jpg",
+					"name": "por"
+				},
+				{
+					"filename": "pomidory.jpg",
+					"name": "pomidory",
+					"isPlural": true
+				},
+				{
+					"filename": "dynia.jpg",
+					"name": "dynia"
+				},
+				{
+					"filename": "rzodkiewka.jpg",
+					"name": "rzodkiewka"
+				},
+				{
+					"filename": "ogorek.jpg",
+					"name": "ogórek"
+				},
+				{
+					"filename": "kukurydza.jpg",
+					"name": "kukurydza"
+				},
+				{
+					"filename": "baklazan.jpg",
+					"name": "bakłażan"
+				},
+				{
+					"filename": "cukinia.jpg",
+					"name": "cukinia"
+				},
+				{
+					"filename": "papryka.jpg",
+					"name": "papryka"
+				},
+				{
+					"filename": "szczypiorek.jpg",
+					"name": "szczypiorek"
+				},
+				{
+					"filename": "groszek.jpg",
+					"name": "groszek"
+				},
+				{
+					"filename": "marchewka.jpg",
+					"name": "marchewka"
+				},
+				{
+					"filename": "fasolka.jpg",
+					"name": "fasolka"
+				},
+				{
+					"filename": "seler.jpg",
+					"name": "seler"
+				}
+			]
+		}
+	],
+	"language": "pl",
+	"spokenSentences": {
+		"examAskPlural": "Gdzie są %s?",
+		"examAskSingular": "Gdzie jest %s?",
+		"examGuessCorrect": "Dobrze!",
+		"examGuessIncorrect": "Niestety nie.",
+		"loading": "Ładowanie (%d/%d)"
+	}
+}

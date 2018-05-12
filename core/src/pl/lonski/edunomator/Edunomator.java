@@ -6,6 +6,7 @@ import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.game.colors.ColorsGame;
 import pl.lonski.edunomator.game.menu.GameMenu;
 import pl.lonski.edunomator.game.numbers.NumbersGame;
+import pl.lonski.edunomator.game.words.WordsGame;
 
 public class Edunomator extends ApplicationAdapter {
 
@@ -23,6 +24,10 @@ public class Edunomator extends ApplicationAdapter {
 			break;
 		case NUMBERS_GAME:
 			game = new NumbersGame(speakerProvider).start(lang);
+			break;
+		case WORDS_GAME:
+			game = new WordsGame(speakerProvider).start(lang);
+			break;
 		default:
 		}
 	}
