@@ -4,6 +4,7 @@ import java.util.*;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.utils.Json;
 
 import pl.lonski.edunomator.Edunomator;
 import pl.lonski.edunomator.game.Game;
@@ -17,10 +18,15 @@ public class NumbersGame implements Game {
 	private Speaker.Provider speakerProvider;
 	private Speaker speaker;
 	private List<Class<? extends GameStage>> stageQueue;
+	private Config config;
 
 	public NumbersGame(Edunomator edunomator) {
 		this.speakerProvider = edunomator.getSpeakerProvider();
 		this.edunomator = edunomator;
+	}
+
+	Config getConfig() {
+		return config;
 	}
 
 	@Override
@@ -33,6 +39,8 @@ public class NumbersGame implements Game {
 
 	@Override
 	public Game start(String lang) {
+		config = new Json().fromJson(Config.class,
+				Gdx.files.internal("numbers/config/" + lang + ".json").readString());
 		speaker = speakerProvider.get(new Locale(lang));
 		populateStageQueue();
 		nextStage();

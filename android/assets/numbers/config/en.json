@@ -1,0 +1,30 @@
+{
+	"apples": {
+		"endGameSay": [
+			"One apple in the basket",
+			"Two apples in the basket",
+			"Three apples in the basket",
+			"Four apples in the basket",
+			"Five apples in the basket",
+			"Six apples in the basket",
+			"Seven apples in the basket",
+			"Eight apples in the basket",
+			"Nine apples in the basket",
+			"Ten apples in the basket"
+		]
+	},
+	"bears": {
+		"endGameSay": [
+			"You caught 1 gummy bear",
+			"You caught 2 gummy bears",
+			"You caught 3 gummy bears",
+			"You caught 4 gummy bears",
+			"You caught 5 gummy bears",
+			"You caught 6 gummy bears",
+			"You caught 7 gummy bears",
+			"You caught 8 gummy bears",
+			"You caught 9 gummy bears",
+			"You caught 10 gummy bears"
+		]
+	}
+}

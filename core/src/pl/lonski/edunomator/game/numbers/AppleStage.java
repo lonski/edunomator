@@ -21,9 +21,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 
 import pl.lonski.edunomator.game.GameStage;
 import pl.lonski.edunomator.physics.WorldManager;
-import pl.lonski.edunomator.util.RandomUtils;
-import pl.lonski.edunomator.util.Speaker;
-import pl.lonski.edunomator.util.TextureActor;
+import pl.lonski.edunomator.util.*;
 
 class AppleStage extends GameStage {
 
@@ -75,7 +73,6 @@ class AppleStage extends GameStage {
 	}
 
 	private void onBasketAdd(Apple apple) {
-//		apple.setTouchable(Touchable.disabled);
 		applesBasket.add(apple);
 		countLabel.setNumber(applesBasket.size());
 		speaker.speak(String.valueOf(applesBasket.size()));
@@ -83,7 +80,6 @@ class AppleStage extends GameStage {
 	}
 
 	private void onBasketRemove(Apple apple) {
-//		apple.setTouchable(Touchable.enabled);
 		applesBasket.remove(apple);
 		countLabel.setNumber(applesBasket.size());
 		speaker.speak(String.valueOf(applesBasket.size()));
@@ -91,27 +87,22 @@ class AppleStage extends GameStage {
 
 	private void handleGameEnd() {
 		if (applesBasket.size() == apples.size()) {
-			final String text = apples.size() > 4 ? " jabłek w koszyku" : " jabłka w koszyku";
+			final String text = game.getConfig().apples.endGameSay.get(apples.size() - 1);
 			addAction(Actions.sequence(
+					new SpeakerWaitAction(speaker),
 					new Action() {
 						@Override
 						public boolean act(float delta) {
-							speaker.speak(String.valueOf(apples.size()) + text);
-//							worldManager.setFreezed(true);
+							speaker.speak(text);
 							return true;
 						}
 					},
+					new SpeakerWaitAction(speaker),
 					new Action() {
-						float time;
-
 						@Override
 						public boolean act(float delta) {
-							time += delta;
-							if (time > 1 / 30f * 5 && !speaker.isSpeaking()) {
-								game.nextStage();
-								return true;
-							}
-							return false;
+							game.nextStage();
+							return true;
 						}
 					}
 			));

@@ -1,0 +1,30 @@
+{
+	"apples": {
+		"endGameSay": [
+			"Jedno jabłko w koszyku",
+			"Dwa jabłka w koszyku",
+			"Trzy jabłka w koszyku",
+			"Cztery jabłka w koszyku",
+			"Pięć jabłek w koszyku",
+			"Sześć jabłek w koszyku",
+			"Siedem jabłek w koszyku",
+			"Osiem jabłek w koszyku",
+			"Dziewięć jabłek w koszyku",
+			"Dziesięć jabłek w koszyku"
+		]
+	},
+	"bears": {
+		"endGameSay": [
+			"Złapałeś jednego żelkowego misia",
+			"Złapałeś dwa żelkowe misie",
+			"Złapałeś trzy żelkowe misie",
+			"Złapałeś cztery żelkowe misie",
+			"Złapałeś pięć żelkowych misiów",
+			"Złapałeś sześć żelkowych misiów",
+			"Złapałeś siedem żelkowych misiów",
+			"Złapałeś osiem żelkowych misiów",
+			"Złapałeś dziewięć żelkowych misiów",
+			"Złapałeś dziesięć żelkowych misiów"
+		]
+	}
+}

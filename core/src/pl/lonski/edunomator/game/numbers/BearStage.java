@@ -22,9 +22,7 @@ import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import pl.lonski.edunomator.game.GameStage;
 import pl.lonski.edunomator.physics.BodyUserData;
 import pl.lonski.edunomator.physics.WorldManager;
-import pl.lonski.edunomator.util.RandomUtils;
-import pl.lonski.edunomator.util.Speaker;
-import pl.lonski.edunomator.util.TextureActor;
+import pl.lonski.edunomator.util.*;
 
 public class BearStage extends GameStage {
 
@@ -62,15 +60,15 @@ public class BearStage extends GameStage {
 
 			@Override
 			public void touchDragged(InputEvent event, float x, float y, int pointer) {
-				float newX = bowl.getX() + x - getWidth() / 2;
+				float newX = bowl.getX() + x - bowl.getWidth() / 2;
 				newX = Math.max(0, newX);
-				newX = Math.min(newX, getScreenWidth() - getWidth());
+				newX = Math.min(newX, getScreenWidth() - bowl.getWidth());
 				float diff = (newX - bowl.getX()) / getScreenWidth();
 				bowl.body.setLinearVelocity(diff * PIXELS_TO_METERS, 0);
 
 				if (bowl.getX() < 0) {
 					bowl.body.setLinearVelocity(Math.max(bowl.body.getLinearVelocity().x, 0), 0);
-				} else if (bowl.getX() > getScreenWidth() - getWidth()) {
+				} else if (bowl.getX() > getScreenWidth() - bowl.getWidth()) {
 					bowl.body.setLinearVelocity(Math.min(bowl.body.getLinearVelocity().x, 0), 0);
 				}
 
@@ -166,9 +164,7 @@ public class BearStage extends GameStage {
 	private void endGame() {
 		isGameEnded = true;
 		bowl.setTouchable(Touchable.disabled);
-		final String text =
-				"złapałeś " + String.valueOf(bearsBowl.size()) +
-						(bearsBowl.size() > 4 ? " żelkowych misiów " : " żelkowe misie ") + "do miski.";
+		final String text = game.getConfig().bears.endGameSay.get(bearsBowl.size() - 1);
 		addAction(Actions.sequence(
 				new Action() {
 					@Override
@@ -177,17 +173,12 @@ public class BearStage extends GameStage {
 						return true;
 					}
 				},
+				new SpeakerWaitAction(speaker),
 				new Action() {
-					float actionTime;
-
 					@Override
 					public boolean act(float delta) {
-						actionTime += delta;
-						if (actionTime > 1 / 30f * 5 && !speaker.isSpeaking()) {
-							game.nextStage();
-							return true;
-						}
-						return false;
+						game.nextStage();
+						return true;
 					}
 				}
 		));
