@@ -6,22 +6,25 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.Json;
 
+import pl.lonski.edunomator.Edunomator;
 import pl.lonski.edunomator.game.Game;
+import pl.lonski.edunomator.game.GameStage;
 import pl.lonski.edunomator.util.Speaker;
 
 public class ColorsGame implements Game {
 
-	private Stage stage;
+	private final Edunomator edunomator;
+	private GameStage stage;
 	private Speaker.Provider speakerProvider;
 	private Speaker speaker;
 	private List<Brush> brushes;
 	private List<Figure> figures;
 
-	public ColorsGame(Speaker.Provider speakerProvider) {
-		this.speakerProvider = speakerProvider;
+	public ColorsGame(Edunomator edunomator) {
+		this.speakerProvider = edunomator.getSpeakerProvider();
+		this.edunomator = edunomator;
 	}
 
 	List<Brush> getBrushes() {
@@ -54,8 +57,7 @@ public class ColorsGame implements Game {
 
 		speaker = speakerProvider.get(new Locale(config.language));
 		stage = new PlayStage(this);
-		Gdx.input.setInputProcessor(stage);
-
+		edunomator.setInputListener(stage);
 		return this;
 	}
 

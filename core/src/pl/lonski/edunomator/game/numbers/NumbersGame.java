@@ -4,21 +4,23 @@ import java.util.*;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.scenes.scene2d.Stage;
 
+import pl.lonski.edunomator.Edunomator;
 import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.game.GameStage;
 import pl.lonski.edunomator.util.Speaker;
 
 public class NumbersGame implements Game {
 
-	private Stage stage;
+	private final Edunomator edunomator;
+	private GameStage stage;
 	private Speaker.Provider speakerProvider;
 	private Speaker speaker;
 	private List<Class<? extends GameStage>> stageQueue;
 
-	public NumbersGame(Speaker.Provider speakerProvider) {
-		this.speakerProvider = speakerProvider;
+	public NumbersGame(Edunomator edunomator) {
+		this.speakerProvider = edunomator.getSpeakerProvider();
+		this.edunomator = edunomator;
 	}
 
 	@Override
@@ -42,14 +44,14 @@ public class NumbersGame implements Game {
 	}
 
 	void nextStage() {
-		Class<? extends Stage> stageClass = stageQueue.remove(0);
+		Class<? extends GameStage> stageClass = stageQueue.remove(0);
 		if (stageQueue.isEmpty()) {
 			populateStageQueue();
 			stageQueue.remove(stageClass);
 		}
 		try {
 			stage = stageClass.getConstructor(NumbersGame.class).newInstance(this);
-			Gdx.input.setInputProcessor(stage);
+			edunomator.setInputListener(stage);
 		} catch (Exception e) {
 			System.out.println("Failed to create next stage: " + e.getMessage());
 			e.printStackTrace();

@@ -42,7 +42,7 @@ public class GameMenu implements Game {
 
 	private void setStage(Stage stage) {
 		this.stage = stage;
-		Gdx.input.setInputProcessor(this.stage);
+		edunomator.setInputListener(this.stage);
 	}
 
 }

@@ -7,6 +7,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 
+import pl.lonski.edunomator.Edunomator;
 import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.game.GameStage;
 import pl.lonski.edunomator.util.Speaker;
@@ -15,13 +16,15 @@ public class WordsGame implements Game {
 
 	private static BitmapFont font;
 
+	private final Edunomator edunomator;
 	private final Speaker.Provider speakerProvider;
 	private Speaker speaker;
 	private GameStage stage;
 	private Config config;
 
-	public WordsGame(Speaker.Provider speakerProvider) {
-		this.speakerProvider = speakerProvider;
+	public WordsGame(Edunomator edunomator) {
+		this.speakerProvider = edunomator.getSpeakerProvider();
+		this.edunomator = edunomator;
 	}
 
 	public static BitmapFont getFont() {
@@ -36,18 +39,20 @@ public class WordsGame implements Game {
 	}
 
 	void learnWords(Config.Dataset dataset) {
-		stage = new WordLearnStage(dataset, this);
-		Gdx.input.setInputProcessor(stage.getInputAdapter());
+		setStage(new WordLearnStage(dataset, this));
 	}
 
 	void startExam(List<Word> words) {
-		stage = new ExamStage(words, this);
-		Gdx.input.setInputProcessor(stage.getInputAdapter());
+		setStage(new ExamStage(words, this));
 	}
 
 	void gameMenu() {
-		stage = new MenuStage(this);
-		Gdx.input.setInputProcessor(stage.getInputAdapter());
+		setStage(new MenuStage(this));
+	}
+
+	private void setStage(GameStage stage) {
+		this.stage = stage;
+		edunomator.setInputListener(stage.getInputAdapter());
 	}
 
 	Config getConfig() {

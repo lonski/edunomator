@@ -7,6 +7,7 @@ public interface Game {
 	Game start(String lang);
 
 	enum Type {
+		GAME_MENU,
 		COLORS_GAME,
 		WORDS_GAME,
 		NUMBERS_GAME,
