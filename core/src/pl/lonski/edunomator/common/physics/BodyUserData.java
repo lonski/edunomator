@@ -1,4 +1,4 @@
-package pl.lonski.edunomator.physics;
+package pl.lonski.edunomator.common.physics;
 
 public class BodyUserData {
 

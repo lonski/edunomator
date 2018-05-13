@@ -4,13 +4,13 @@ import static pl.lonski.edunomator.game.Game.Type.GAME_MENU;
 
 import com.badlogic.gdx.*;
 
+import pl.lonski.edunomator.common.Speaker;
 import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.game.colors.ColorsGame;
 import pl.lonski.edunomator.game.menu.GameMenu;
 import pl.lonski.edunomator.game.menu.Hud;
 import pl.lonski.edunomator.game.numbers.NumbersGame;
 import pl.lonski.edunomator.game.words.WordsGame;
-import pl.lonski.edunomator.util.Speaker;
 
 public class Edunomator extends ApplicationAdapter {
 

@@ -1,12 +1,9 @@
 package pl.lonski.edunomator.game.numbers;
 
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.fadeOut;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.parallel;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.removeActor;
-import static com.badlogic.gdx.scenes.scene2d.actions.Actions.sequence;
-import static pl.lonski.edunomator.util.RandomUtils.nextBoolean;
-import static pl.lonski.edunomator.util.RandomUtils.nextInt;
-import static pl.lonski.edunomator.physics.WorldManager.PIXELS_TO_METERS;
+import static com.badlogic.gdx.scenes.scene2d.actions.Actions.*;
+import static pl.lonski.edunomator.common.RandomUtils.nextBoolean;
+import static pl.lonski.edunomator.common.RandomUtils.nextInt;
+import static pl.lonski.edunomator.common.physics.WorldManager.PIXELS_TO_METERS;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.audio.Sound;
@@ -15,8 +12,8 @@ import com.badlogic.gdx.physics.box2d.*;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
-import pl.lonski.edunomator.physics.BodyUserData;
-import pl.lonski.edunomator.physics.WorldManager;
+import pl.lonski.edunomator.common.physics.BodyUserData;
+import pl.lonski.edunomator.common.physics.WorldManager;
 
 class Balloon extends Actor {
 

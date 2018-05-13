@@ -1,4 +1,4 @@
-package pl.lonski.edunomator.util;
+package pl.lonski.edunomator.common;
 
 import com.badlogic.gdx.input.GestureDetector;
 

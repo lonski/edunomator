@@ -11,12 +11,13 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 
+import pl.lonski.edunomator.common.SimpleDirectionGestureDetector;
+import pl.lonski.edunomator.common.actor.Text;
 import pl.lonski.edunomator.game.GameStage;
-import pl.lonski.edunomator.util.*;
 
-public class WordLearnStage extends GameStage implements DirectionListener {
+public class WordLearnStage extends GameStage implements pl.lonski.edunomator.common.DirectionListener {
 
-	private final Speaker speaker;
+	private final pl.lonski.edunomator.common.Speaker speaker;
 	private final WordsGame game;
 	private final WordLoader loader;
 	private final String loadingText;

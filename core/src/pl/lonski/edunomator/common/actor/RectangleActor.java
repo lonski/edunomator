@@ -1,4 +1,4 @@
-package pl.lonski.edunomator.util;
+package pl.lonski.edunomator.common.actor;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Pixmap;

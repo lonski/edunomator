@@ -2,8 +2,8 @@ package pl.lonski.edunomator.game.numbers;
 
 import static com.badlogic.gdx.physics.box2d.BodyDef.BodyType.DynamicBody;
 import static com.badlogic.gdx.physics.box2d.BodyDef.BodyType.KinematicBody;
-import static pl.lonski.edunomator.physics.WorldManager.PIXELS_TO_METERS;
-import static pl.lonski.edunomator.util.TextureUtils.readCoords;
+import static pl.lonski.edunomator.common.TextureUtils.readCoords;
+import static pl.lonski.edunomator.common.physics.WorldManager.PIXELS_TO_METERS;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,17 +19,18 @@ import com.badlogic.gdx.scenes.scene2d.Touchable;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 
+import pl.lonski.edunomator.common.SpeakerWaitAction;
+import pl.lonski.edunomator.common.actor.TextureActor;
+import pl.lonski.edunomator.common.physics.BodyUserData;
+import pl.lonski.edunomator.common.physics.WorldManager;
 import pl.lonski.edunomator.game.GameStage;
-import pl.lonski.edunomator.physics.BodyUserData;
-import pl.lonski.edunomator.physics.WorldManager;
-import pl.lonski.edunomator.util.*;
 
 public class BearStage extends GameStage {
 
 	private final NumbersGame game;
 	private final WorldManager worldManager;
 	private final NumberActor countLabel;
-	private final Speaker speaker;
+	private final pl.lonski.edunomator.common.Speaker speaker;
 	private final Bowl bowl;
 	private List<Bear> bears;
 	private List<Bear> bearsBowl;
@@ -45,7 +46,7 @@ public class BearStage extends GameStage {
 		this.bears = new ArrayList<>();
 		this.bearsBowl = new ArrayList<>();
 		this.speaker = game.getSpeaker();
-		this.minBearsInBowl = RandomUtils.nextInt(3, 6);
+		this.minBearsInBowl = pl.lonski.edunomator.common.RandomUtils.nextInt(3, 6);
 
 		countLabel = new NumberActor();
 		countLabel.setScale(2f);
@@ -104,10 +105,11 @@ public class BearStage extends GameStage {
 	private void spawnBear() {
 		Bear bear = new Bear();
 		bear.setPosition(
-				RandomUtils.nextInt((int) bear.getWidth(), (int) (getScreenWidth() - bear.getWidth())),
+				pl.lonski.edunomator.common.RandomUtils.nextInt((int) bear.getWidth(),
+						(int) (getScreenWidth() - bear.getWidth())),
 				getScreenHeight() + bear.getHeight()
 		);
-		bear.setRotation(RandomUtils.nextInt(360));
+		bear.setRotation(pl.lonski.edunomator.common.RandomUtils.nextInt(360));
 		bear.createBody(worldManager.getWorld());
 		addActor(bear);
 		bears.add(bear);
@@ -254,7 +256,8 @@ public class BearStage extends GameStage {
 					"numbers/bears/bear_yellow.png",
 					"numbers/bears/bear_green.png"
 			);
-			return new Texture(Gdx.files.internal(files.get(RandomUtils.nextInt(files.size()))));
+			return new Texture(
+					Gdx.files.internal(files.get(pl.lonski.edunomator.common.RandomUtils.nextInt(files.size()))));
 		}
 
 		void removeActor() {

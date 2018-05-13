@@ -1,4 +1,4 @@
-package pl.lonski.edunomator.physics;
+package pl.lonski.edunomator.common.physics;
 
 import static com.badlogic.gdx.physics.box2d.BodyDef.BodyType.StaticBody;
 
@@ -66,7 +66,8 @@ public class WorldManager {
 		Array<Body> bodies = new Array<>();
 		world.getBodies(bodies);
 		for (Body b : bodies) {
-			BodyUserData data = (BodyUserData) b.getUserData();
+			pl.lonski.edunomator.common.physics.BodyUserData data =
+					(pl.lonski.edunomator.common.physics.BodyUserData) b.getUserData();
 			if (data != null) {
 				if (data.isDeleteFlag()) {
 					world.destroyBody(b);

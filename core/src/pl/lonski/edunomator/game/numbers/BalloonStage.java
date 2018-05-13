@@ -7,9 +7,9 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
+import pl.lonski.edunomator.common.RandomUtils;
+import pl.lonski.edunomator.common.physics.WorldManager;
 import pl.lonski.edunomator.game.GameStage;
-import pl.lonski.edunomator.physics.WorldManager;
-import pl.lonski.edunomator.util.RandomUtils;
 
 class BalloonStage extends GameStage {
 

@@ -13,9 +13,9 @@ import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 
+import pl.lonski.edunomator.common.actor.TextureActor;
 import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.game.GameStage;
-import pl.lonski.edunomator.util.TextureActor;
 
 class ChooseGameStage extends GameStage {
 

@@ -13,8 +13,8 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 import com.badlogic.gdx.utils.SnapshotArray;
 
+import pl.lonski.edunomator.common.Speaker;
 import pl.lonski.edunomator.game.GameStage;
-import pl.lonski.edunomator.util.Speaker;
 
 class PlayStage extends GameStage {
 

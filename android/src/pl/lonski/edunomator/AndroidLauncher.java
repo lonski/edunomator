@@ -8,7 +8,7 @@ import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
-import pl.lonski.edunomator.util.Speaker;
+import pl.lonski.edunomator.common.Speaker;
 
 public class AndroidLauncher extends AndroidApplication {
 

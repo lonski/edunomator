@@ -6,7 +6,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 
-import pl.lonski.edunomator.util.Text;
+import pl.lonski.edunomator.common.actor.Text;
 
 public class Word extends Actor {
 

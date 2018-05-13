@@ -7,8 +7,8 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.InputListener;
 
 import pl.lonski.edunomator.Edunomator;
+import pl.lonski.edunomator.common.actor.RectangleActor;
 import pl.lonski.edunomator.game.GameStage;
-import pl.lonski.edunomator.util.RectangleActor;
 
 public class Hud extends GameStage {
 

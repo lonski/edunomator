@@ -7,9 +7,9 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.utils.Json;
 
 import pl.lonski.edunomator.Edunomator;
+import pl.lonski.edunomator.common.Speaker;
 import pl.lonski.edunomator.game.Game;
 import pl.lonski.edunomator.game.GameStage;
-import pl.lonski.edunomator.util.Speaker;
 
 public class NumbersGame implements Game {
 

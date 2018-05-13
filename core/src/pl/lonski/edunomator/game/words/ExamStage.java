@@ -11,9 +11,9 @@ import com.badlogic.gdx.scenes.scene2d.Action;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Touchable;
 
+import pl.lonski.edunomator.common.RandomUtils;
+import pl.lonski.edunomator.common.Speaker;
 import pl.lonski.edunomator.game.GameStage;
-import pl.lonski.edunomator.util.RandomUtils;
-import pl.lonski.edunomator.util.Speaker;
 
 public class ExamStage extends GameStage {
 

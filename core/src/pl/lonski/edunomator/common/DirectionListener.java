@@ -1,4 +1,4 @@
-package pl.lonski.edunomator.util;
+package pl.lonski.edunomator.common;
 
 public interface DirectionListener {
 	void onLeft();

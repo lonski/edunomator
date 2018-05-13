@@ -2,8 +2,8 @@ package pl.lonski.edunomator.game.numbers;
 
 import static com.badlogic.gdx.physics.box2d.BodyDef.BodyType.DynamicBody;
 import static com.badlogic.gdx.physics.box2d.BodyDef.BodyType.StaticBody;
-import static pl.lonski.edunomator.physics.WorldManager.PIXELS_TO_METERS;
-import static pl.lonski.edunomator.util.TextureUtils.readCoords;
+import static pl.lonski.edunomator.common.TextureUtils.readCoords;
+import static pl.lonski.edunomator.common.physics.WorldManager.PIXELS_TO_METERS;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -19,9 +19,10 @@ import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.actions.Actions;
 import com.badlogic.gdx.scenes.scene2d.utils.DragListener;
 
+import pl.lonski.edunomator.common.SpeakerWaitAction;
+import pl.lonski.edunomator.common.actor.TextureActor;
+import pl.lonski.edunomator.common.physics.WorldManager;
 import pl.lonski.edunomator.game.GameStage;
-import pl.lonski.edunomator.physics.WorldManager;
-import pl.lonski.edunomator.util.*;
 
 class AppleStage extends GameStage {
 
@@ -33,7 +34,7 @@ class AppleStage extends GameStage {
 	private List<Apple> applesBasket;
 	private WorldManager worldManager;
 	private NumberActor countLabel;
-	private Speaker speaker;
+	private pl.lonski.edunomator.common.Speaker speaker;
 	private NumbersGame game;
 
 	public AppleStage(NumbersGame game) {
@@ -125,7 +126,7 @@ class AppleStage extends GameStage {
 	private void spawnApples() {
 		this.apples = new ArrayList<>();
 		this.applesBasket = new ArrayList<>();
-		int appleCount = RandomUtils.nextInt(3, 10);
+		int appleCount = pl.lonski.edunomator.common.RandomUtils.nextInt(3, 10);
 		Collections.shuffle(APPLE_COORDS);
 		for (int i = 0; i < appleCount; i++) {
 			Vector2 appleCoord = APPLE_COORDS.get(i);

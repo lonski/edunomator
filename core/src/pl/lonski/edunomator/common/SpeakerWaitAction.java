@@ -1,13 +1,13 @@
-package pl.lonski.edunomator.util;
+package pl.lonski.edunomator.common;
 
 import com.badlogic.gdx.scenes.scene2d.Action;
 
 public class SpeakerWaitAction extends Action {
 
 	private float time;
-	private Speaker speaker;
+	private pl.lonski.edunomator.common.Speaker speaker;
 
-	public SpeakerWaitAction(Speaker speaker) {
+	public SpeakerWaitAction(pl.lonski.edunomator.common.Speaker speaker) {
 		this.speaker = speaker;
 	}
 
