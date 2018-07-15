@@ -37,3 +37,5 @@ Three different stages:
 <img src="https://github.com/lonski/edunomator/raw/master/screenshots/numbers2.png" width="256">
 <img src="https://github.com/lonski/edunomator/raw/master/screenshots/numbers3.png" width="256">
 </p>
+
+---
